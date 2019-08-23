@@ -1,0 +1,14 @@
+{
+  "name": "apparel",
+  "version": "1.0.0",
+  "description": "base apparel frontendmentor.io challenge",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/base.scss css/style.css -w"
+  },
+  "author": "Ayaan",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
