@@ -58,6 +58,19 @@ html {
       height: 5rem;
       width: 43rem;
       padding: 1.5rem 2rem; }
+      .header__form--field-label {
+        order: 1;
+        padding: 1rem 2.2rem;
+        flex: 0 0 100%;
+        font-size: 1.15rem;
+        color: #f96262;
+        opacity: 0;
+        transition: all .8s; }
+      .header__form--field-error {
+        transform: translateX(-9.5rem);
+        align-self: center;
+        opacity: 0;
+        transition: all .2s; }
       .header__form--field:focus {
         outline: none; }
         .header__form--field:focus:invalid {

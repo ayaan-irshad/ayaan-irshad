@@ -94,6 +94,26 @@ html {
             height: 5rem;
             width: 43rem;
             padding: 1.5rem 2rem;
+
+            &-label {
+                order: 1;
+                padding: 1rem 2.2rem;
+                flex: 0 0 100%;
+                font-size: 1.15rem;
+                color: $color-red-bright;
+                opacity: 0;
+                transition: all .8s;
+            }            
+
+
+            &-error {
+                transform: translateX(-9.5rem);
+                align-self: center;
+                opacity: 0;
+                transition: all .2s;
+
+            }
+
             &:focus {
                 outline: none;
 
@@ -101,7 +121,17 @@ html {
                 border: 2px solid $color-red-bright;
                 }
             }
-        
+
+            &:focus:invalid ~ &-error{
+                opacity: 100;
+
+            }
+
+            &:focus:invalid ~ &-label{
+                opacity: 100;
+
+            }
+            
         }
 
         &--button {
@@ -110,8 +140,8 @@ html {
             border-radius: 100px;
             border: none;
             background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-            margin-left: -5rem;
-
+            transition: all .2s;
+            margin-left: -8rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -127,6 +157,16 @@ html {
             &:focus {
                 outline:none;
             }
+
+            &:hover {
+                filter: brightness(95%);
+                transform: scale(1.1);
+            }
+
+            &:active {
+                transform: scale(1);
+            }
+
         }
 
     }
