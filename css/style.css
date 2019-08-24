@@ -54,7 +54,8 @@ html {
       border: 1px solid rgba(206, 151, 151, 0.4);
       border-radius: 100px;
       height: 5rem;
-      width: 43rem; }
+      width: 43rem;
+      padding: 1.5rem 2rem; }
       .header__form--field:focus {
         outline: none; }
     .header__form--button {
@@ -64,7 +65,6 @@ html {
       border: none;
       background-image: linear-gradient(to right, #f8bfbf, #ee8c8c);
       margin-left: -5rem;
-      padding: 1.5rem 2rem;
       display: flex;
       justify-content: center;
       align-items: center; }

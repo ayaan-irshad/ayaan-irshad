@@ -92,7 +92,7 @@ html {
             border-radius: 100px;
             height: 5rem;
             width: 43rem;
-
+            padding: 1.5rem 2rem;
             &:focus {
                 outline: none;
             }
@@ -105,9 +105,8 @@ html {
             border-radius: 100px;
             border: none;
             background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-
             margin-left: -5rem;
-            padding: 1.5rem 2rem;
+
             display: flex;
             justify-content: center;
             align-items: center;
