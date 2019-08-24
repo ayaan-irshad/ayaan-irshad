@@ -37,7 +37,8 @@ html {
     background-image: url(../images/bg-pattern-desktop.svg);
     background-size: cover;
 
-    padding: 5rem 15rem;
+    padding-top: 5rem;
+    padding-left: 15rem;
     padding-right: 18rem;
     padding-bottom: 12rem;
     
@@ -78,28 +79,61 @@ html {
 
     &__form {
         display: flex;
+        flex-wrap: wrap;
 
         input::-webkit-input-placeholder {
             font-family: 'Josefin Sans', sans-serif;
             color: $color-red-dull;            
             opacity: .5;
             font-weight: 600;
-
-         }
+        }
 
         &--field {
             border: 1px solid rgba($color-red-dull, .4);
             border-radius: 100px;
             height: 5rem;
             width: 43rem;
+            padding: 1.5rem 2rem;
 
-            &:focus {
-                outline: none;
+            &-label {
+                order: 1;
+                padding: 1rem 2.2rem;
+                flex: 0 0 100%;
+                font-size: 1.15rem;
+                color: $color-red-bright;
+                opacity: 0;
+                transition: all .8s;
             }
 
             
 
-        
+
+            &-error {
+                transform: translateX(-9.5rem);
+                align-self: center;
+                opacity: 0;
+                transition: all .2s;
+
+            }
+
+            &:focus {
+                outline: none;
+
+                &:invalid {
+                border: 2px solid $color-red-bright;
+                }
+            }
+
+            &:focus:invalid ~ &-error{
+                opacity: 100;
+
+            }
+
+            &:focus:invalid ~ &-label{
+                opacity: 100;
+
+            }
+            
         }
 
         &--button {
@@ -108,12 +142,12 @@ html {
             border-radius: 100px;
             border: none;
             background-image: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-
-            margin-left: -5rem;
-
+            transition: all .2s;
+            margin-left: -8rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
 
             &-svg {
              width: 100%;
@@ -126,7 +160,14 @@ html {
                 outline:none;
             }
 
+            &:hover {
+                filter: brightness(95%);
+                transform: scale(1.1);
+            }
 
+            &:active {
+                transform: scale(1);
+            }
 
         }
 
