@@ -64,6 +64,7 @@ html {
       border: none;
       background-image: linear-gradient(to right, #f8bfbf, #ee8c8c);
       margin-left: -5rem;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: center;
       align-items: center; }
