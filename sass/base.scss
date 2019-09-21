@@ -20,17 +20,28 @@ body {
 
 html {
     font-size: 62.5%; // 10/16 = 62.5%  1rem = 10px
+    @media only screen and (max-width: 40em) {
+        font-size: 40%;
+    }
 }
 
 // CONTAINER
 .container  {
+  /*OLD style
     height: 100vh;
     display: flex;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+  */
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
 }
 
 // HEADER
 .header {
-
+/* old style
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -41,11 +52,52 @@ html {
     padding-left: 15rem;
     padding-right: 18rem;
     padding-bottom: 12rem;
+*/
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    @media only screen and (max-width: 40em) {
+        height: 120vh;
+        flex: 0 0 100%;
+        padding: 0;
+        align-items: center;
+
+        margin-left: 0;
+
+       }
+    
+
+    &__hero {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+
+        @media only screen and (max-width: 40em) {
+            background-image: url(../images/hero-mobile.jpg);
+            height: 35%;
+            width: auto;    
+            background-size: cover;
+            visibility: visible;
+            opacity: 1;
+            display: inline;
+
+            align-self: normal;
+        }
+
+    }
     
     &__logo {
-        margin-bottom: auto;
+        margin-bottom: 6rem; // old value = auto
         align-self: flex-start;
 
+        @media only screen and (max-width: 40em) {
+           margin: 5%;
+        }
+        
     }
 
     &__heading {
@@ -63,6 +115,12 @@ html {
 
         margin-bottom: 2.5rem;
 
+        @media only screen and (max-width: 40em) {
+            width: 73%;
+            text-align: center;
+
+            margin-top: 4rem;
+        }
     }
 
     &__text { 
@@ -70,9 +128,13 @@ html {
         line-height: 1.8;
         color: $color-red-dull;
 
-        
         padding-bottom: 5rem;
 
+        @media only screen and (max-width: 40em) {
+            width: 50%;
+            text-align: center;
+
+        }
     }
 
     // FORM
@@ -81,6 +143,15 @@ html {
         display: flex;
         flex-wrap: wrap;
 
+        min-width: 46rem;
+
+        @media only screen and (max-width: 40em) {
+            width: 47rem;
+        }
+
+        @media only screen and (max-width: 23.75em) {
+            justify-content: center;
+        }
         input::-webkit-input-placeholder {
             font-family: 'Josefin Sans', sans-serif;
             color: $color-red-dull;            
@@ -94,6 +165,10 @@ html {
             height: 5rem;
             width: 43rem;
             padding: 1.5rem 2rem;
+
+            @media only screen and (max-width: 23.75em) {
+                width: 32rem;
+            }
 
             &-label {
                 order: 1;
@@ -174,12 +249,16 @@ html {
 }
 
 .hero {
-     
+    align-self: center; 
     flex: 0 0 40%;
 
     &__image {
         width: 100%;
     }
+
+    @media only screen and (max-width: 40em) {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
 }
-// TYPOGRAPHY 
-//  .heading-1 { }
